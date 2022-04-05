@@ -1,0 +1,21 @@
+.card {
+    background-color: rgb(253, 253, 253);
+    margin: 0.5rem 3rem 0.5rem 3rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(17, 17, 17);
+    border-radius: 0.5rem;
+    width: auto;
+    box-shadow: -11px 13px 8px 0 rgb(0 0 0 / 20%);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+.card figure img{
+  width:100%;
+  height:auto
+}
