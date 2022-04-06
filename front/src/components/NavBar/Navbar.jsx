@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import s from "./styles/Navbar.module.css";
+import s from "../NavBar/styles/Navbar.module.css";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import { ProductInCart } from "../../components/Cart/ProductInCart"
 
-export const Navbar = () => {
+export const Navbar = ({ handleRemoveFromCart , cartItems }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSideBar = () => setSidebar(!sidebar);
@@ -15,14 +16,16 @@ export const Navbar = () => {
           <FaIcons.FaBars onClick={showSideBar} />
         </Link>
       </div>
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className={s.navbarMenuItems}>
-          <li className={s.navbarToggle}>
-            <Link to="#" className={s.menubars}>
-                <AiIcons.AiOutlineClose/>
-            </Link>
-          </li>
-        </ul>
+      <nav className={sidebar ? s.navmenuopen : s.navmenu}>
+        <div className={s.equis}>
+          <Link to="#" className={s.menuopen}>
+            <AiIcons.AiOutlineClose onClick={showSideBar} />
+          </Link>
+        </div>
+
+        {
+            cartItems?.map(product => <ProductInCart item={product} />)
+        }
       </nav>
     </div>
   );

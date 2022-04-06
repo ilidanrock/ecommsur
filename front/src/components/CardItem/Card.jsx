@@ -1,13 +1,9 @@
 import React from "react";
-import axios from "axios";
 import s from "./styles/Card.module.css";
 
-export const Card = (props) => {
-  const { id, image, numReviews, name , price } = props;
+export const Card = ({product, handleAddToCart}) => {
+  const { image , numReviews , price , name } = product
 
-  const handleAddToCart = () => {
-
-  }
   return (
     <section>
       <div className={s.card}>
@@ -21,7 +17,7 @@ export const Card = (props) => {
         <figcaption>{name}</figcaption>
         <span>{numReviews}</span>
         <h3>'$'{price}</h3>
-        <button onClick={()=>handleAddToCart()}>Add to cart</button>
+        <button onClick={()=>handleAddToCart(product)}>Add to cart</button>
       </div>
     </section>
   );
