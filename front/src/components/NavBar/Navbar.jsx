@@ -4,7 +4,13 @@ import s from "../NavBar/styles/Navbar.module.css";
 import * as FaIcons from "react-icons/bi";
 import { Sidebar } from "../SideBar/Sidebar";
 
-export const Navbar = ({ handleRemoveFromCart, cartItems, getTotalItems , handleAddToCart , removeItemfromCart }) => {
+export const Navbar = ({
+  handleRemoveFromCart,
+  cartItems,
+  getTotalItems,
+  handleAddToCart,
+  removeItemfromCart,
+}) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSideBar = () => setSidebar(!sidebar);
