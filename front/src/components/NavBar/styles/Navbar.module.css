@@ -1,49 +1,51 @@
-.navbar{
-    background-color: #060b26;
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center ;
+.navbar {
+  background-color: #060b26;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.menubars{
-    margin-left: 1rem;
-    font-size: 2rem;
-    background: none;
-}
-
-.menuopen{
-    margin-left: 1rem;
-    font-size: 2rem;
-    background: none;
-}
-.navmenu{
-    background-color: black;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    transition: 850ms;
+.menubars {
+  margin-left: 1rem;
+  font-size: 2rem;
+  background: none;
 }
 
-.navmenuopen{
-    background-color: rgb(238, 226, 226);
-    width: 300px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 850ms
+.menuopen {
+  margin-left: 1rem;
+  font-size: 2rem;
+  background: none;
+}
+.navmenu {
+  background-color: black;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
 }
 
-.navbarToggle{
-    list-style: none;
-}
-.equis{
-    margin-left: auto;
+.navmenuopen {
+  background-color: rgb(238, 226, 226);
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 850ms;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+.navbarToggle {
+  list-style: none;
+}
+.equis {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}

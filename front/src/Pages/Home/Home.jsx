@@ -16,50 +16,64 @@ export const Home = () => {
 
   useEffect(() => {
     console.log("Cartitems", cartItems);
-  }, [cartItems])
-  
+  }, [cartItems]);
 
   const handleAddToCart = (clickedItem) => {
-    setcartItems(prev => {
+    setcartItems((prev) => {
       //1. Is the item already added in the carr?
       const isItemInCart = prev.find((item) => item._id === clickedItem._id);
-      console.log("isItemInCart", isItemInCart);
+
       if (isItemInCart) {
         return prev.map((item) =>
-          item.id === clickedItem.id
-            ? { ...item, amount: item.amount + 1 }
+          item._id === clickedItem._id
+            ? {
+                ...item,
+                amount: item.amount + 1,
+                countInStock: item.countInStock - 1,
+              }
             : item
         );
       }
       //First time the item is added
-      return [...prev, { ...clickedItem, amount: 1 }];
+      return [
+        ...prev,
+        {
+          ...clickedItem,
+          amount: 1,
+          countInStock: clickedItem.countInStock - 1,
+        },
+      ];
     });
   };
 
   const handleRemoveFromCart = (id) => {
-    setcartItems(prev => (
+    setcartItems((prev) =>
       prev.reduce((ack, item) => {
-        if (item.id === id) {
+        if (item._id === id) {
           if (item.amount === 1) {
-            return ack
+            return ack;
           }
-          return [...ack, { ...item, amount: item.amount - 1 }]
+          return [...ack, { ...item, amount: item.amount - 1 }];
         } else {
-          return [...ack, item]
+          return [...ack, item];
         }
       }, [])
-    ))
+    );
   };
 
   return (
     <main>
-      <Navbar handleRemoveFromCart = {handleRemoveFromCart} cartItems={cartItems} />
+      <Navbar
+        handleRemoveFromCart={handleRemoveFromCart}
+        cartItems={cartItems}
+      />
       <div className={s.gripcards}>
         {allproducts?.map((product) => (
           <Card
             key={Math.random()}
             product={product}
             handleAddToCart={handleAddToCart}
+            cartItems={cartItems}
           />
         ))}
       </div>

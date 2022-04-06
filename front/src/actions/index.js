@@ -13,3 +13,17 @@ export function products() {
         }
     }
 }
+
+export function productDetail(id) {
+    return async function (dispatch) {
+        try {
+            let json = await axios(`http://localhost:5000/api/products/${id}`)
+            dispatch({
+                type: "GET-DETAIL",
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}

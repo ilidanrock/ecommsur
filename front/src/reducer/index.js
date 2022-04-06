@@ -1,5 +1,8 @@
+import { productDetail } from "../actions";
+
 const initialState = {
-  products: []
+  products: [],
+  productDetail: {}
   };
 
   function rootReducer(state = initialState, action) {
@@ -9,6 +12,11 @@ const initialState = {
           ...state,
           products: action.payload
         };
+        case "GET-DETAIL":
+          return {
+            ...state,
+            productDetail: action.payload
+          };
       default:
         return state;
     }
