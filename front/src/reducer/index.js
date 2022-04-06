@@ -1,4 +1,4 @@
-import { productDetail } from "../actions";
+
 
 const initialState = {
   products: [],

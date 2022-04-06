@@ -18,6 +18,9 @@ export const Home = () => {
     console.log("Cartitems", cartItems);
   }, [cartItems]);
 
+  const getTotalItems = (items) =>
+    items.reduce((ack, item) => ack + item.amount, 0);
+
   const handleAddToCart = (clickedItem) => {
     setcartItems((prev) => {
       //1. Is the item already added in the carr?
@@ -61,11 +64,20 @@ export const Home = () => {
     );
   };
 
+  const removeItemfromCart = (id) => {
+    setcartItems( (prev) => 
+      prev.filter(ele => ele._id !== id )
+    )
+  }
+
   return (
     <main>
       <Navbar
         handleRemoveFromCart={handleRemoveFromCart}
+        handleAddToCart={handleAddToCart}
         cartItems={cartItems}
+        getTotalItems={getTotalItems}
+        removeItemfromCart={removeItemfromCart}
       />
       <div className={s.gripcards}>
         {allproducts?.map((product) => (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import s from "./styles/Card.module.css";
 
 export const Card = ({ product, handleAddToCart, cartItems }) => {
-  const { image, numReviews, price, name } = product;
+  const { image, numReviews, price, name , _id } = product;
 
   const [disable, setdisable] = useState(false);
 
@@ -15,13 +15,11 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
     }
   }, [cartItems, product._id]);
 
-  // const validator = () => {
-  // }
 
   return (
     <section>
       <div className={s.card}>
-        <Link to="#">
+        <Link to={`/product/${_id}`}>
           <figure>
             <img
               src={`http://localhost:5000${image}`}

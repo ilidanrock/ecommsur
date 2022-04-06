@@ -4,7 +4,14 @@ import s from "./styles/Sidebar.module.css";
 import * as AiIcons from "react-icons/ai";
 import { ProductInCart } from "../Cart/ProductInCart";
 
-export const Sidebar = ({ cartItems, sidebar, setSidebar }) => {
+export const Sidebar = ({
+  cartItems,
+  sidebar,
+  setSidebar,
+  handleAddToCart,
+  handleRemoveFromCart,
+  removeItemfromCart
+}) => {
   const showSideBar = () => setSidebar(!sidebar);
   return (
     <div>
@@ -12,10 +19,16 @@ export const Sidebar = ({ cartItems, sidebar, setSidebar }) => {
         <Link to="#" className={s.menuopen}>
           <AiIcons.AiOutlineClose onClick={showSideBar} />
         </Link>
-        <h2>Your Shopping cart</h2>
+        <h2>Your Shopping Cart</h2>
       </div>
       {cartItems?.map((product) => (
-        <ProductInCart item={product} key={product._id} />
+        <ProductInCart
+          item={product}
+          key={product._id}
+          handleRemoveFromCart={handleRemoveFromCart}
+          handleAddToCart={handleAddToCart}
+          removeItemfromCart={removeItemfromCart}
+        />
       ))}
     </div>
   );

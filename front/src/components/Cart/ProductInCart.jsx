@@ -1,7 +1,12 @@
 import React from "react";
 import s from "./styles/ProductInCart.module.css";
 
-export const ProductInCart = ({ item, addToCart, removeFromCart }) => {
+export const ProductInCart = ({
+  item,
+  handleRemoveFromCart,
+  handleAddToCart,
+  removeItemfromCart,
+}) => {
   return (
     <div className={s.wrapper}>
       <div>
@@ -11,15 +16,16 @@ export const ProductInCart = ({ item, addToCart, removeFromCart }) => {
           <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
         </div>
         <div className={s.buttons}>
-          <button onClick={() => removeFromCart(item._id)}>-</button>
+          <button onClick={() => handleRemoveFromCart(item._id)}>-</button>
           <p>{item.amount}</p>
-          <button onClick={() => addToCart(item)}>+</button>
+          <button onClick={() => handleAddToCart(item)}>+</button>
         </div>
+        <button onClick={() => removeItemfromCart(item._id)}>Remove</button>
       </div>
       <figure>
         <img
           src={`http://localhost:5000${item.image}`}
-          alt=""
+          alt={`${item.name}`}
           className={s.image}
         />
       </figure>
