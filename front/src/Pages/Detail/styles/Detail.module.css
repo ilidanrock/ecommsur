@@ -2,7 +2,7 @@
   justify-content: space-evenly;
   padding: 1% 1% 1% 1%;
   margin: 1rem 1.5rem;
-  border: 1.5px solid #342ba8;
+  border: 3px solid rgb(17, 17, 17);
   box-sizing: border-box;
   text-decoration: none;
   color: #0f0f0f;
@@ -13,13 +13,13 @@
   display: flex;
   justify-content: center;
 }
-.descripcion {
-  font-size: 1.3rem;
+.description {
+  font-size: 1rem;
   text-align: center;
   margin: 1rem;
 }
 .rating {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 1rem;
 }
 .cardDetail img {
@@ -60,15 +60,42 @@
 
 .refresh {
   margin: 5px 0;
-  background-color: rgba(40, 41, 141, 0.85);
+  background-color: rgba(172, 172, 187, 0.85);
   border-radius: 10px 10px;
   font-size: 14px;
   font-weight: normal;
-  color: white;
-  text-shadow: 0.0625rem 0.0625rem 0.5rem #07cbe9, 0 0 1em #d4d1bd,
-    0 0 0.2em #07cbe9;
-  border: 4px outset #c2dee9;
+  border: 4px ;
   outline: none;
   padding: 2px 14px 2px 14px;
   text-decoration: none;
+}
+
+.icon{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.ratingIcon{
+  display: flex;
+}
+
+.ratingReviews{
+  display: flex;
+  justify-content: space-around;
+}
+.container2{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 1rem;
+
+}
+@media screen and (min-width: 480px) {
+  .descriptionDetail{
+    display: flex;
+    align-items: center;
+    
+  }
+  .descriptionDetail div img {
+    max-width: 525px ;
+  }
 }

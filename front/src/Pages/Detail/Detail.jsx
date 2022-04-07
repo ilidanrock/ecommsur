@@ -3,6 +3,8 @@ import { productDetail } from "../../actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import * as FaIcons from "react-icons/fc";
+import * as FaIcons1 from "react-icons/bs";
 import s1 from "./styles/Detail.module.css";
 
 export const Detail = () => {
@@ -18,24 +20,39 @@ export const Detail = () => {
     <div className={s1.container}>
       {detail ? (
         <div className={s1.cardDetail}>
-          <h1>{detail.name}</h1>
-          <img
-            src={`http://localhost:5000${detail.image}`}
-            alt={`${detail.name}`}
-          ></img>
-          <h2>Descripcion:</h2>
-          <div
-            className={s1.descripcion}
-            dangerouslySetInnerHTML={{ __html: detail.description }}
-          />
-          <h2>Rating : </h2> <p className={s1.rating}> {detail.rating}</p>
-          <div>
-            <h2>Reviews: </h2>
-            <p>{detail.numReviews}</p>
+          <div className={s1.icon}>
+            <Link to="/">
+              <FaIcons.FcDownLeft className={s1.refresh} />
+            </Link>
           </div>
-          <Link to="/">
-            <button className={s1.refresh}>Volver</button>
-          </Link>
+          <div className={s1.descriptionDetail}>
+            <div>
+              <h2>{detail.name}</h2>
+              <img
+                src={`http://localhost:5000${detail.image}`}
+                alt={`${detail.name}`}
+              />
+            </div>
+            <div className={s1.container2}>
+              <div
+                className={s1.description}
+                dangerouslySetInnerHTML={{ __html: detail.description }}
+              />
+              <h3>Descripcion:</h3>
+              <div className={s1.ratingReviews}>
+                <div>
+                  <FaIcons1.BsStar />
+                  <h3>Rating : </h3>{" "}
+                  <p className={s1.rating}> {detail.rating}</p>
+                </div>
+                <div>
+                  <FaIcons1.BsEye />
+                  <h3>Reviews: </h3>
+                  <p>{detail.numReviews}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className={s1.loading}>

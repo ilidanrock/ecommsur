@@ -4,7 +4,13 @@ import s from "../NavBar/styles/Navbar.module.css";
 import * as FaIcons from "react-icons/bi";
 import { Sidebar } from "../SideBar/Sidebar";
 
-export const Navbar = ({ handleRemoveFromCart, cartItems, getTotalItems , handleAddToCart , removeItemfromCart }) => {
+export const Navbar = ({
+  handleRemoveFromCart,
+  cartItems,
+  getTotalItems,
+  handleAddToCart,
+  removeItemfromCart,
+}) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSideBar = () => setSidebar(!sidebar);
@@ -14,7 +20,9 @@ export const Navbar = ({ handleRemoveFromCart, cartItems, getTotalItems , handle
         <Link to="#" className={s.menubars}>
           <FaIcons.BiCartAlt onClick={showSideBar} className={s.icon} />
         </Link>
-        <span className={s.icon}>{`( ${getTotalItems(cartItems)} )`}</span>
+        <span
+          className={getTotalItems(cartItems) > 0 ? s.iconRed : s.icon}
+        >{` ${getTotalItems(cartItems)} `}</span>
       </div>
       <nav className={sidebar ? s.navmenuopen : s.navmenu}>
         <Sidebar

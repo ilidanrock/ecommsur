@@ -4,6 +4,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  top: 0;
 }
 .menubars {
   margin-left: 1rem;
@@ -51,4 +54,11 @@
 }
 .icon{
   color: antiquewhite;
+}
+.iconRed{
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
 }
