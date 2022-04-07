@@ -33,7 +33,7 @@ export const Detail = () => {
             <h2>Reviews: </h2>
             <p>{detail.numReviews}</p>
           </div>
-          <Link to="/Home">
+          <Link to="/">
             <button className={s1.refresh}>Volver</button>
           </Link>
         </div>
