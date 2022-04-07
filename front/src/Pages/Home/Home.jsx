@@ -9,7 +9,7 @@ export const Home = () => {
   const [cartItems, setcartItems] = useState(()=>{
     try {
       
-      const item = window.localStorage.getItem("cartItems")
+      let item = window.localStorage.getItem("cartItems")
       return item ? JSON.parse(item) : []
     } catch (error) {
       return []
@@ -19,14 +19,12 @@ export const Home = () => {
   const allproducts = useSelector((state) => state.products);
 
   useEffect(() => {
-    setcartItems([])
     dispatch(products());
-    //window.localStorage.setItem("cartItems", [])
-  },[]);
-
+    window.localStorage.setItem("cartItems", [])
+  },[dispatch]);
   useEffect(() => {
-    console.log("Cartitems", cartItems);
-  }, [cartItems]);
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
+  },[cartItems]);
 
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
