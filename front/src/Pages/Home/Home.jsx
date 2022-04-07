@@ -6,12 +6,12 @@ import { Navbar } from "../../components/NavBar/Navbar";
 import s from "./styles/Home.module.css";
 
 export const Home = () => {
-  const [cartItems, setcartItems] = useState(() => {
+  const [cartItems, setcartItems] = useState(()=>{
     try {
-      let item = window.localStorage.getItem("cartItems");
-      return item ? JSON.parse(item) : [];
+      const item = window.localStorage.getItem("cartItems")
+      return item ? JSON.parse(item) : []
     } catch (error) {
-      return [];
+      return []
     }
   });
   const dispatch = useDispatch();
@@ -19,11 +19,12 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(products());
-    window.localStorage.setItem("cartItems", []);
-  }, [dispatch]);
-  
+    window.localStorage.setItem("cartItems", [])
+    console.log("LOcal", window.localStorage.getItem("cartItems"));
+  },[]);
+
   useEffect(() => {
-    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    console.log("Cartitems", cartItems);
   }, [cartItems]);
 
   const getTotalItems = (items) =>
@@ -44,7 +45,7 @@ export const Home = () => {
               }
             : item
         );
-        return current;
+        return current
       }
       //First time the item is added
       let current = [
@@ -55,10 +56,9 @@ export const Home = () => {
           countInStock: clickedItem.countInStock - 1,
         },
       ];
-      window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      return current;
+      return current
     });
-    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
   };
 
   const handleRemoveFromCart = (id) => {
@@ -74,12 +74,12 @@ export const Home = () => {
         }
       }, [])
     );
-    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
   };
 
   const removeItemfromCart = (id) => {
     setcartItems((prev) => prev.filter((ele) => ele._id !== id));
-    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
   };
 
   return (

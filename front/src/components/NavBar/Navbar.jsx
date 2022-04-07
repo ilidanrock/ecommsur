@@ -20,9 +20,7 @@ export const Navbar = ({
         <Link to="#" className={s.menubars}>
           <FaIcons.BiCartAlt onClick={showSideBar} className={s.icon} />
         </Link>
-        <span
-          className={getTotalItems(cartItems) > 0 ? s.iconRed : s.icon}
-        >{` ${getTotalItems(cartItems)} `}</span>
+        <span className={s.icon}>{`( ${getTotalItems(cartItems)} )`}</span>
       </div>
       <nav className={sidebar ? s.navmenuopen : s.navmenu}>
         <Sidebar

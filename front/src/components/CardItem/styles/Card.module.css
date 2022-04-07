@@ -1,21 +1,101 @@
 .card {
-    background-color: rgb(253, 253, 253);
-    margin: 0.5rem 3rem 0.5rem 3rem;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(17, 17, 17);
-    border-radius: 0.5rem;
-    width: auto;
-    box-shadow: -11px 13px 8px 0 rgb(0 0 0 / 20%);
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  background-color: #fdfdfd;
+  margin: 0.5rem 3rem 0.5rem 3rem;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #111111;
+  border-radius: 0.5rem;
+  width: auto;
+  box-shadow: -11px 13px 8px 0 rgb(0 0 0 / 20%);
+  padding: 10px;
+  height:  400px;;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.containerDescriptionItem, .containerButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.containerButton {
+  padding: 10px;
+  justify-content: space-between;
+}
+.card figure img {
+  width: 250px;
+  height: auto;
+}
+.spanReviewsItem {
+  font-size: 18px;
+  border-radius: 50px;
+  padding: 4px;
+}
+.figcaption {
+  font-size: 16px;
+  padding: 9px;
+  text-align: left;
+}
+.containerButtonAddItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.iconFontFaStar {
+  color: #f77859;
+}
+.iconFontFaRegEye {
+  font-size: 25px;
+}
+.iconFontFaPlusCircle {
+  font-size: 29px;
+}
+.iconFontFaPlusCircle:hover{
+  color: #f77859;
+}
+.iconFontFaPlusCircle:active{
+  color: #d4674c;
+}
+.cardReviewItem {
+  color: #000;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  align-items: center;
+}
+.cardLinkDetails {
+  text-decoration: none;
+}
+.textButtonAdd {
+  padding-top: 5px;
+  font-size: 10px;
+}
+.containerIconFaStar {
+  display: flex;
+  align-items: center;
+}
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1024px) { 
+  .card{
+    justify-content: space-around;
+  }
+  .containerDescriptionItem{
+    padding: 0;
+  }
+  .containerButton{
+    justify-content: space-between;
   }
 
-.card figure img{
-  width:100%;
-  height:auto
+ 
 }

@@ -18,15 +18,14 @@ const App = () => {
         .then((res) => setResponse(res));
     };
     getApiResponse();
-    
   }, []);
   // -------------------------------------------------
-  console.log(response);
+
   return (
     <BrowserRouter>
       <div style={{ textAlign: "center" }}>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/Home" element={<Home/>} />
           <Route path="/product/:id" element={<Detail/>}/>
         </Routes>
       </div>

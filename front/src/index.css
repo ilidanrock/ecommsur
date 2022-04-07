@@ -1,3 +1,17 @@
+:root{
+  --coralLight: var(#eee2e2);
+  --light: var(#e2dede);
+  --brownDark: var(#847D4B);
+  --brownLight: var(#565233);
+  --danger: var(#a30404);
+  --blank: var(#000000);
+  --pinkCream: var(#f77859);
+  --blueDark: var(#060b26);
+  --lightCream: var(#faebd7);
+  --white: var(#ffff);
+  --carLight:var(#fdfdfd);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
