@@ -10,11 +10,11 @@ export const Sidebar = ({
   setSidebar,
   handleAddToCart,
   handleRemoveFromCart,
-  removeItemfromCart
+  removeItemfromCart,
 }) => {
   const showSideBar = () => setSidebar(!sidebar);
-  const calculateTotal = (items) => 
-    items.reduce((ack, item)=> ack + item.amount * item.price, 0)
+  const calculateTotal = (items) =>
+    items.reduce((ack, item) => ack + item.amount * item.price, 0);
 
   return (
     <div>
@@ -23,9 +23,8 @@ export const Sidebar = ({
           <AiIcons.AiOutlineClose onClick={showSideBar} />
         </Link>
         <h2>Your Shopping Cart</h2>
-        
       </div>
-      {cartItems.length === 0? <p>No items in cart</p>: null}
+      {cartItems.length === 0 ? <p>No items in cart</p> : null}
       {cartItems?.map((product) => (
         <ProductInCart
           item={product}
@@ -35,7 +34,7 @@ export const Sidebar = ({
           removeItemfromCart={removeItemfromCart}
         />
       ))}
-      <h2>Total: ${calculateTotal(cartItems).toFixed((2))}</h2>
+      <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
     </div>
   );
 };

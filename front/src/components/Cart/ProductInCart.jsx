@@ -7,14 +7,13 @@ export const ProductInCart = ({
   handleAddToCart,
   removeItemfromCart,
 }) => {
-
   const disable = () => {
-    if (item.countInStock>0) {
-      return false
-    }else{
-      return true
+    if (item.countInStock > 0) {
+      return false;
+    } else {
+      return true;
     }
-  }
+  };
   return (
     <div className={s.wrapper}>
       <div>
@@ -26,7 +25,9 @@ export const ProductInCart = ({
         <div className={s.buttons}>
           <button onClick={() => handleRemoveFromCart(item._id)}>-</button>
           <p>{item.amount}</p>
-          <button onClick={() => handleAddToCart(item)} disabled={disable()} >+</button>
+          <button onClick={() => handleAddToCart(item)} disabled={disable()}>
+            +
+          </button>
         </div>
         <button onClick={() => removeItemfromCart(item._id)}>Remove</button>
       </div>

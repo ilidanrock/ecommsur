@@ -6,17 +6,25 @@ import { Navbar } from "../../components/NavBar/Navbar";
 import s from "./styles/Home.module.css";
 
 export const Home = () => {
-  const [cartItems, setcartItems] = useState([]);
+  const [cartItems, setcartItems] = useState(()=>{
+    try {
+      
+      let item = window.localStorage.getItem("cartItems")
+      return item ? JSON.parse(item) : []
+    } catch (error) {
+      return []
+    }
+  });
   const dispatch = useDispatch();
   const allproducts = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(products());
-  }, [dispatch]);
-
+    window.localStorage.setItem("cartItems", [])
+  },[dispatch]);
   useEffect(() => {
-    console.log("Cartitems", cartItems);
-  }, [cartItems]);
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
+  },[cartItems]);
 
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
@@ -27,7 +35,7 @@ export const Home = () => {
       const isItemInCart = prev.find((item) => item._id === clickedItem._id);
 
       if (isItemInCart) {
-        return prev.map((item) =>
+        let current = prev.map((item) =>
           item._id === clickedItem._id
             ? {
                 ...item,
@@ -36,9 +44,10 @@ export const Home = () => {
               }
             : item
         );
+        return current
       }
       //First time the item is added
-      return [
+      let current = [
         ...prev,
         {
           ...clickedItem,
@@ -46,7 +55,10 @@ export const Home = () => {
           countInStock: clickedItem.countInStock - 1,
         },
       ];
+      window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
+      return current
     });
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
   };
 
   const handleRemoveFromCart = (id) => {
@@ -62,13 +74,13 @@ export const Home = () => {
         }
       }, [])
     );
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
   };
 
   const removeItemfromCart = (id) => {
-    setcartItems( (prev) => 
-      prev.filter(ele => ele._id !== id )
-    )
-  }
+    setcartItems((prev) => prev.filter((ele) => ele._id !== id));
+    window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
+  };
 
   return (
     <main>
