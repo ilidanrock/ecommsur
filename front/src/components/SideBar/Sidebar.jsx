@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import s from "./styles/Sidebar.module.css";
 import * as AiIcons from "react-icons/ai";
 import { ProductInCart } from "../Cart/ProductInCart";
+import { FaCartPlus } from 'react-icons/fa';
 
 export const Sidebar = ({
   cartItems,
@@ -22,9 +23,9 @@ export const Sidebar = ({
         <Link to="#" className={s.menuopen}>
           <AiIcons.AiOutlineClose onClick={showSideBar} />
         </Link>
-        <h2>Your Shopping Cart</h2>
+        <h2>Your Shopping Car</h2>
       </div>
-      {cartItems.length === 0 ? <p>No items in cart</p> : null}
+      {cartItems.length === 0 ? <div className={s.containerIconFaCartPlus}><FaCartPlus className={s.iconFaCartPlus}/><p>Your car is empty</p></div> : null}
       {cartItems?.map((product) => (
         <ProductInCart
           item={product}
@@ -34,7 +35,7 @@ export const Sidebar = ({
           removeItemfromCart={removeItemfromCart}
         />
       ))}
-      <h2>Total: ${calculateTotal(cartItems).toFixed(2)}</h2>
+      <span className={s.totalSellingPrice}>Total: ${calculateTotal(cartItems).toFixed(2)}</span>
     </div>
   );
 };

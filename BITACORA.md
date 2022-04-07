@@ -1,4 +1,4 @@
-# Solucion de la prueba técnica Front Ecomsur 2022
+# Bitacora Front Ecomsur 2022
 
 ### Descripción de la aplicación.
 
@@ -18,11 +18,13 @@ Esta aplicación muestra un listado de productos de una API local, implementa un
 
 3 .- Después, volver a la carpeta root del proyecto y correr `npm run dev`. Este comando levantara el servidor de Node JS en el puerto `http://localhost:5000/` y el servidor de React en el puerto `http://localhost:3000/`. 
 
-Nota : puedes darle click aquí `http://localhost:3000/` si el navegador no se abre después de levantar el proyecto 
+Nota : puedes darle click aquí `http://localhost:3000/` si el navegador no se abre automáticamente después de levantar el proyecto.
 
 ### Imágenes de la aplicación.
 
-
+- Catálogo de productos![PLP](/PLP.png)
+- Pagina de detalle del producto ![PDP](/PDP.png)
+- Carrito de compras ![Cart](/cart.png)
 
 
 

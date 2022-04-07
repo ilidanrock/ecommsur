@@ -1,16 +1,99 @@
-.wrapper{
+h4 {
+    font-size: 10px;
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+    font-weight: 400;
+  }
+  .wrapper {
+    background-color: #e2dede;
+    margin: 10px 10px;
+  }
+  .wrapperFigure {
     display: flex;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid lightblue;
-    padding-bottom: 20px;
-}
-.information, .buttons{
+    align-items: stretch;
+  }
+  
+  .buttons {
     display: flex;
-    justify-content: space-between;
-}
-.image{
-    max-width: 80px;
-    object-fit:cover;
-    margin-left:40px;
-}
+    justify-content: space-around;
+    align-items: center;
+  }
+  .information {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .image {
+    max-width: 120px;
+  }
+  
+  .containerNameImageItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .priceText {
+    font-size: 16px;
+    text-align: right;
+    font-weight: 500;
+  }
+  .wrapperImageName {
+    display: flex;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  }
+  .containerNamePrice {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 0;
+  }
+  .buttonsItemRemove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    border: none;
+    background-color: transparent;
+  }
+  .buttonsItem {
+    background-color: #847d4b;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+  }
+  .buttonsItem:active {
+    background-color: #565233;
+  }
+  .iconFaRegTrashAlt {
+    font-size: 20px;
+    color: #a30404;
+  }
+  .iconFaRegTrashAlt:hover {
+    color: #920303;
+  }
+  .iconFaRegTrashAlt:active {
+    color: #b20909;
+  }
+  .spanAmount {
+    padding: 10px;
+  }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 16px;
+    }
+    .buttonsItem {
+      padding: 11px;
+    }
+    .buttons {
+      padding-bottom: 5px;
+    }
+    .iconFaRegTrashAlt {
+      font-size: 25px;
+    }
+  }
+  

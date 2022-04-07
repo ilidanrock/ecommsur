@@ -1,51 +1,73 @@
+
 .navbar {
-    background-color: #060b26;
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .menubars {
-    margin-left: 1rem;
-    font-size: 2rem;
-    background: none;
-  }
-  
-  .menuopen {
-    margin: auto;
-    font-size: 2rem;
-    background: none;
-  }
-  .navmenu {
-    background-color: black;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -100%;
-  }
-  
-  .navmenuopen {
-    background-color: rgb(238, 226, 226);
-    width: 300px;
-    height: 100vh;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 850ms;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  
-  .navbarToggle {
-    list-style: none;
-  }
-  .equis {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-left: auto;
-  }
+  background-color: #060b26;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.menubars {
+  margin-left: 1rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.menuopen {
+  background: none;
+  font-size: 1.5rem;
+}
+.navmenu {
+  background-color: #000000;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+}
+
+.navmenuopen {
+  background-color: #eee2e2;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 850ms;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.navbarToggle {
+  list-style: none;
+}
+.equis {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.containerIconFaCartPlus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 23px;
+}
+.iconFaCartPlus{
+  font-size: 30px;
+  padding: 10px;
+}
+.totalSellingPrice{
+  font-size: 22px;
+  font-weight: 600;
+  padding: 3px;
+}
+
