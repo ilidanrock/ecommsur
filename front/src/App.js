@@ -25,7 +25,7 @@ const App = () => {
     <BrowserRouter>
       <div style={{ textAlign: "center" }}>
         <Routes>
-          <Route path="/Home" element={<Home/>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/product/:id" element={<Detail/>}/>
         </Routes>
       </div>

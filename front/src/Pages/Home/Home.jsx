@@ -8,6 +8,7 @@ import s from "./styles/Home.module.css";
 export const Home = () => {
   const [cartItems, setcartItems] = useState(()=>{
     try {
+      
       const item = window.localStorage.getItem("cartItems")
       return item ? JSON.parse(item) : []
     } catch (error) {
@@ -18,9 +19,9 @@ export const Home = () => {
   const allproducts = useSelector((state) => state.products);
 
   useEffect(() => {
+    setcartItems([])
     dispatch(products());
-    window.localStorage.setItem("cartItems", [])
-    console.log("LOcal", window.localStorage.getItem("cartItems"));
+    //window.localStorage.setItem("cartItems", [])
   },[]);
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export const Home = () => {
           countInStock: clickedItem.countInStock - 1,
         },
       ];
+      window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
       return current
     });
     window.localStorage.setItem("cartItems",JSON.stringify(cartItems))
