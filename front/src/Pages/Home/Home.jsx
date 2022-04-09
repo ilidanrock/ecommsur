@@ -28,7 +28,7 @@ export const Home = () => {
 
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
-
+    
   const handleAddToCart = (clickedItem) => {
     setcartItems((prev) => {
       //1. Is the item already added in the carr?
