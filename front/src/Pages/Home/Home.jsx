@@ -21,14 +21,14 @@ export const Home = () => {
     dispatch(products());
     window.localStorage.setItem("cartItems", []);
   }, [dispatch]);
-  
+
   useEffect(() => {
     window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
-    
+
   const handleAddToCart = (clickedItem) => {
     setcartItems((prev) => {
       //1. Is the item already added in the carr?

@@ -23,9 +23,9 @@ Nota : puedes darle click aquí `http://localhost:3000/` si el navegador no se a
 <br/>
 ### Imágenes de la aplicación.
 
-- Catálogo de productos![PLP](/PLP.png)
-- Pagina de detalle del producto ![PDP](/PDP.png)
-- Carrito de compras ![Cart](/cart.png)
+- Catálogo de productos![PLP](/asset/PLP.png)
+- Pagina de detalle del producto ![PDP](/asset/PDP.png)
+- Carrito de compras ![Cart](/asset/cart.png)
 
 <br/>
 
