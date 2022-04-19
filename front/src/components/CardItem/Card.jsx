@@ -1,9 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import s from "./styles/Card.module.css";
-import { FaRegEye, FaStar, FaPlusCircle } from 'react-icons/fa';
-
+import { FaRegEye, FaStar, FaPlusCircle } from "react-icons/fa";
 
 export const Card = ({ product, handleAddToCart, cartItems }) => {
   const { image, numReviews, price, name, _id } = product;
@@ -23,8 +21,8 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
       <div className={s.card}>
         <Link className={s.cardLinkDetails} to={`/product/${_id}`}>
           <div className={s.cardReviewItem}>
-          <FaRegEye className={s.iconFontFaRegEye}/>
-            <span className= {s.spanReviewsItem}>{numReviews}</span>
+            <FaRegEye className={s.iconFontFaRegEye} />
+            <span className={s.spanReviewsItem}>{numReviews}</span>
           </div>
           <figure>
             <img
@@ -40,19 +38,16 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
           </div>
           <div className={s.containerButton}>
             <div className={s.containerIconFaStar}>
-            <FaStar className={s.iconFontFaStar}/>
-            <span>{product.rating}</span>
+              <FaStar className={s.iconFontFaStar} />
+              <span>{product.rating}</span>
             </div>
             <button
               onClick={() => handleAddToCart(product)}
               disabled={disable || !product.countInStock}
               className={s.containerButtonAddItem}
             >
-              <FaPlusCircle  className={s.iconFontFaPlusCircle}/>
-              <small className={s.textButtonAdd}>
-              Add to car
-              </small>
-             
+              <FaPlusCircle className={s.iconFontFaPlusCircle} />
+              <small className={s.textButtonAdd}>Add to car</small>
             </button>
           </div>
         </div>

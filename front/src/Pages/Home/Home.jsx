@@ -28,7 +28,7 @@ export const Home = () => {
 
   const handleAddToCart = (clickedItem) => {
     setcartItems((prev) => {
-      //1. Is the item already added in the carr?
+      //1. Is the item already added in the card?
       const isItemInCart = prev.find((item) => item._id === clickedItem._id);
 
       if (isItemInCart) {
