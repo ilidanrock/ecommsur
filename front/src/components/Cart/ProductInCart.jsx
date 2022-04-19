@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./styles/ProductInCart.module.css";
-import { FaPlus, FaMinus, FaRegTrashAlt } from 'react-icons/fa';
+import { FaPlus, FaMinus, FaRegTrashAlt } from "react-icons/fa";
 
 export const ProductInCart = ({
   item,
@@ -34,20 +34,28 @@ export const ProductInCart = ({
           <div className={s.information}>
             {/* <p>Total: ${(item.amount * item.price).toFixed(2)}</p> */}
             <div className={s.buttons}>
-              <button className={s.buttonsItem} onClick={() => handleRemoveFromCart(item._id)}><FaMinus/></button>
+              <button
+                className={s.buttonsItem}
+                onClick={() => handleRemoveFromCart(item._id)}
+              >
+                <FaMinus />
+              </button>
               <small className={s.spanAmount}>{item.amount}</small>
               <button
                 onClick={() => handleAddToCart(item)}
                 disabled={disable()}
                 className={s.buttonsItem}
-              ><FaPlus/></button>
-            </div>
-            <button className={s.buttonsItemRemove} onClick={() => removeItemfromCart(item._id)}>
-              <FaRegTrashAlt className={s.iconFaRegTrashAlt}/>
-              <small>
-              Remove
-              </small>
+              >
+                <FaPlus />
               </button>
+            </div>
+            <button
+              className={s.buttonsItemRemove}
+              onClick={() => removeItemfromCart(item._id)}
+            >
+              <FaRegTrashAlt className={s.iconFaRegTrashAlt} />
+              <small>Remove</small>
+            </button>
           </div>
         </div>
       </div>

@@ -19,12 +19,9 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(products());
-    window.localStorage.setItem("cartItems", []);
   }, [dispatch]);
 
-  useEffect(() => {
-    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+
 
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
@@ -81,6 +78,10 @@ export const Home = () => {
     setcartItems((prev) => prev.filter((ele) => ele._id !== id));
     window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <main>
