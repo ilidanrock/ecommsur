@@ -21,8 +21,6 @@ export const Home = () => {
     dispatch(products());
   }, [dispatch]);
 
-
-
   const getTotalItems = (items) =>
     items.reduce((ack, item) => ack + item.amount, 0);
 
@@ -65,7 +63,14 @@ export const Home = () => {
           if (item.amount === 1) {
             return ack;
           }
-          return [...ack, { ...item, amount: item.amount - 1 }];
+          return [
+            ...ack,
+            {
+              ...item,
+              amount: item.amount - 1,
+              countInStock: item.countInStock + 1,
+            },
+          ];
         } else {
           return [...ack, item];
         }
