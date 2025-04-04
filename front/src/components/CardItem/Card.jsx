@@ -12,7 +12,7 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
 
   useEffect(() => {
     let item = cartItems.find((ele) => ele._id === product._id);
-    console.log("ITEM", item);
+
     if (item && item.countInStock < 1) {
       setdisable(true);
     }
@@ -28,7 +28,7 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
           </div>
           <figure>
             <img
-              src={`http://localhost:5000${image}`}
+              src={`${image}`}
               alt={`product name is ${name}`}
             />
           </figure>
