@@ -29,7 +29,7 @@ export const Detail = () => {
             <div>
               <h2>{detail.name}</h2>
               <img
-                src={`http://localhost:5000${detail.image}`}
+                src={`${detail.image}`}
                 alt={`${detail.name}`}
               />
             </div>

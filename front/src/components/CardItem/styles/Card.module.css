@@ -96,7 +96,6 @@ figure {
 
 @media (min-width: 768px) { 
   .card figure img {
-    width: 290px;
     height: auto;
   }
 }

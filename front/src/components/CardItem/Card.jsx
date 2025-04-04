@@ -29,6 +29,7 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
           <figure>
             <img
               src={image}
+              className={s.imgCard}
               alt={`product name is ${name}`}
             />
           </figure>
