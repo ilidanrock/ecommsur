@@ -28,7 +28,7 @@ export const Card = ({ product, handleAddToCart, cartItems }) => {
           </div>
           <figure>
             <img
-              src={`${image}`}
+              src={image}
               alt={`product name is ${name}`}
             />
           </figure>
